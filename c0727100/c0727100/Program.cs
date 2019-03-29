@@ -10,8 +10,8 @@ namespace c0727100
     {
         static void Main(string[] args)
         {
-            HelloWorld hw = new HelloWorld();
-            hw.Hello();
+		HelloWorld hw=new HelloWorld();
+		hw.Hello();
         }
     }
     class HelloWorld
@@ -20,5 +20,7 @@ namespace c0727100
         {
             Console.WriteLine("Hello World");
         }
+	    
+	public int Add(int a, int b) {return a+b;}
     }
 }
