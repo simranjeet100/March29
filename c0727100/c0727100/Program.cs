@@ -10,7 +10,15 @@ namespace c0727100
     {
         static void Main(string[] args)
         {
-			int i =7;
+            HelloWorld hw = new HelloWorld();
+            hw.Hello();
+        }
+    }
+    class HelloWorld
+    {
+        public void Hello()
+        {
+            Console.WriteLine("Hello World");
         }
     }
 }
