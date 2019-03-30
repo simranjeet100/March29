@@ -26,14 +26,19 @@ namespace c0727100
 
     }
 
-
     class Network
     {
-        public async void Download()
+        static ArrayList WbPageContents = new ArrayList();
+        public static async Task Download()
         {
+
             HttpClient client = new HttpClient();
-            var data = await client.GetStringAsync("https://torontopubliclibrary.ca");
+            var data = await client.GetStringAsync("http://ibm.com");
             Console.WriteLine(data);
+            foreach (var i in data)
+            {
+                WbPageContents.Add(i);
+            }
         }
     }
 }
