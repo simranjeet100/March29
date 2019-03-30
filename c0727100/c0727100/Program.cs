@@ -29,10 +29,7 @@ namespace c0727100
 
         class Network
         {
-            static public Task download()
-            {
-                return Task.Run(
-                () => ThreadStaticAttribute.Sleep(60000));
+            public static async Task Download();
             }
         }
     }
