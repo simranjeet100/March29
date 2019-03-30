@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
+
 
 namespace c0727100
 {
@@ -10,17 +12,17 @@ namespace c0727100
     {
         static void Main(string[] args)
         {
-		HelloWorld hw=new HelloWorld();
-		hw.Hello();
+            Console.WriteLine("downloading a file");
+            Download();
+            Console.ReadLine();
         }
-    }
-    class HelloWorld
+    
+    static void Download()
     {
-        public void Hello()
-        {
-            Console.WriteLine("Hello World");
+        Thread.Sleep(3000);
+        Console.WriteLine("download a file");
+             Thread.Sleep(7000);
         }
-	    
-	public int Add(int a, int b) {return a+b;}
-    }
 }
+}
+
