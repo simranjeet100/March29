@@ -8,29 +8,31 @@ using System.Threading;
 
 namespace c0727100
 {
-    
+
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("download");
+            Console.WriteLine(" Downloading a file");
             Download();
             Console.ReadLine();
-            
-
-            
         }
+
         static async void Download()
         {
-            await Network.download();
-            Console.WriteLine("download complete");
+            await Network.Download();
+            Console.WriteLine("Download Complete");
         }
 
+    }
 
-        class Network
+    class Network
+    {
+        public async void Download()
         {
-            public static async Task Download();
-            }
+            HttpClient client = new HttpClient();
+            var data = await client.GetStringAsync("https://torontopubliclibrary.ca");
+            Console.WriteLine(data);
         }
     }
 }
