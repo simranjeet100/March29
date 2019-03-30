@@ -8,21 +8,32 @@ using System.Threading;
 
 namespace c0727100
 {
+    
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("downloading a file");
+            Console.WriteLine("download");
             Download();
             Console.ReadLine();
-        }
-    
-    static void Download()
-    {
-        Thread.Sleep(3000);
-        Console.WriteLine("download a file");
-             Thread.Sleep(7000);
-        }
-}
-}
+            
 
+            
+        }
+        static async void Download()
+        {
+            await Network.download();
+            Console.WriteLine("download complete");
+        }
+
+
+        class Network
+        {
+            static public Task download()
+            {
+                return Task.Run(
+                () => ThreadStaticAttribute.Sleep(60000));
+            }
+        }
+    }
+}
